@@ -1,0 +1,15 @@
+{
+  "name": "pips-little-paper-world",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A handmade paper-cutout motion graphics short, rendered from SVG to MP4.",
+  "scripts": {
+    "audio": "node scripts/audio.mjs",
+    "stills": "node scripts/render.mjs --stills 0.6,2,3.9,6.4,8.5,9.15,10.6,11.5,13.1,14.2,16.3,17.4,18.5,19.3,19.7,21,22.6,24.5,26.9",
+    "render": "node scripts/audio.mjs && node scripts/render.mjs",
+    "preview": "npx --yes http-server -p 8080 -c-1 ."
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

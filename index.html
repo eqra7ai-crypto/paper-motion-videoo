@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pip's Little Paper World</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #2b2420; overflow: hidden; }
+    body { display: flex; align-items: center; justify-content: center; font: 13px/1.4 system-ui, sans-serif; color: #f3e8d8; }
+    #stage { width: min(100vw, calc((100vh - 56px) * 16 / 9)); aspect-ratio: 16 / 9; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+    #stage svg { display: block; width: 100%; height: 100%; }
+    #ui { position: fixed; left: 0; right: 0; bottom: 0; height: 48px; display: flex; gap: 12px; align-items: center; padding: 0 16px; background: rgba(30,24,20,.85); }
+    #ui button { background: #e7d4b9; color: #3b2d25; border: 0; border-radius: 6px; padding: 6px 14px; font-weight: 600; cursor: pointer; }
+    #ui input { flex: 1; accent-color: #d9977c; }
+    #ui span { min-width: 92px; text-align: right; font-variant-numeric: tabular-nums; }
+    body.render { display: block; background: #f4eadb; }
+    body.render #ui { display: none; }
+    body.render #stage { width: 1920px; height: 1080px; box-shadow: none; }
+  </style>
+</head>
+<body>
+  <div id="stage"></div>
+  <div id="ui">
+    <button id="play">Pause</button>
+    <input id="scrub" type="range" min="0" max="27" step="0.0333" value="0">
+    <span id="time">0.00 s</span>
+  </div>
+  <audio id="music" src="out/soundtrack.wav" preload="auto"></audio>
+
+  <script src="src/timeline.js"></script>
+  <script src="src/paper.js"></script>
+  <script src="src/pip.js"></script>
+  <script src="src/scene.js"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const renderMode = params.has('render');
+      if (renderMode) document.body.classList.add('render');
+      Scene.build(document.getElementById('stage'));
+
+      // Deterministic hook used by scripts/render.mjs
+      window.renderFrame = (t) => Scene.render(t);
+      window.__ready = true;
+      if (renderMode) { Scene.render(Number(params.get('t') || 0)); return; }
+
+      // Interactive preview: space = play/pause, arrows = step, drag the bar to scrub
+      const D = Scene.duration, music = document.getElementById('music');
+      const btn = document.getElementById('play'), scrub = document.getElementById('scrub'), label = document.getElementById('time');
+      scrub.max = D;
+      let playing = !params.has('t'), t = Number(params.get('t') || 0), last = performance.now(), hasAudio = false;
+      music.addEventListener('canplay', () => { hasAudio = true; });
+      const setPlaying = (p) => {
+        playing = p;
+        btn.textContent = p ? 'Pause' : 'Play';
+        if (hasAudio) { music.currentTime = t; p ? music.play().catch(() => {}) : music.pause(); }
+      };
+      btn.onclick = () => setPlaying(!playing);
+      scrub.oninput = () => { t = Number(scrub.value); if (hasAudio) music.currentTime = t; };
+      addEventListener('keydown', (e) => {
+        if (e.code === 'Space') { e.preventDefault(); setPlaying(!playing); }
+        if (e.code === 'ArrowRight') t = Math.min(D, t + 1 / 30);
+        if (e.code === 'ArrowLeft') t = Math.max(0, t - 1 / 30);
+      });
+      function tick(now) {
+        if (playing) {
+          t += (now - last) / 1000;
+          if (hasAudio && !music.paused && Math.abs(music.currentTime - t) > 0.08) t = music.currentTime;
+          if (t >= D) { t = 0; if (hasAudio) { music.currentTime = 0; music.play().catch(() => {}); } }
+        }
+        last = now;
+        Scene.render(t);
+        scrub.value = t;
+        label.textContent = t.toFixed(2) + ' s';
+        requestAnimationFrame(tick);
+      }
+      setPlaying(playing);
+      requestAnimationFrame(tick);
+    })();
+  </script>
+</body>
+</html>
