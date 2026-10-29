@@ -1,4 +1,4 @@
-// Render the full film: node render.js <scale> <out.mp4> [workers] [crf]
+// Render the full film: node render.js <scale> <out.mp4> [workers] [crf | bitrate like 14M]
 // Frames are rendered in parallel Chromium pages, encoded per segment, then joined with the audio track.
 const { chromium } = require('playwright'); const { spawn, execFileSync } = require('child_process');
 const fs = require('fs'), path = require('path');
@@ -10,7 +10,7 @@ async function worker(i, browser) {
   const page = await browser.newPage(); page.on('pageerror', e => console.log('ERR', e.message));
   await page.addInitScript(() => { window.__RENDERER__ = true; });
   await page.goto('file://' + path.join(__dirname, 'index.html')); await page.evaluate(s => setup(s), Number(scale));
-  const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-', '-c:v', 'libx264', '-preset', 'slow', '-crf', crf, '-pix_fmt', 'yuv420p', '-profile:v', 'high', seg], { stdio: ['pipe', 'inherit', 'inherit'] });
+  const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-', '-c:v', 'libx264', '-preset', 'slow', ...(crf.endsWith('M') ? ['-b:v', crf, '-maxrate', Math.round(parseFloat(crf) * 1.3) + 'M', '-bufsize', Math.round(parseFloat(crf) * 2.6) + 'M'] : ['-crf', crf]), '-pix_fmt', 'yuv420p', '-profile:v', 'high', seg], { stdio: ['pipe', 'inherit', 'inherit'] });
   const done = new Promise(r => ff.on('close', r));
   for (let f = a; f < b; f++) {
     const d = await page.evaluate(t => { renderFrame(t); return document.getElementById('c').toDataURL('image/jpeg', 0.96); }, f / FPS);

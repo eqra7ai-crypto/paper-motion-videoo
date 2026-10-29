@@ -507,7 +507,7 @@ function pose(who, t) {
     p.torso += reach * 0.14 - lift * 0.12;
     p.tilt += reach * 0.06 - lift * 0.42 + down * 0.3 - pk * 0.2;
     const tableW = [0.7, 0.79 + reach * 0.03 + 0.04 * ss(T.grab, T.grab + 0.4, t)];
-    const mouth = [0.2, 1.035], viewW = [0.36, 1.0], pocketW = [0.2, 0.88], chestW = [0.17, 0.83];
+    const mouth = [0.19, 0.975], viewW = [0.36, 1.0], pocketW = [0.2, 0.88], chestW = [0.17, 0.83];
     let w = mixc([...p.wristN, 0], [...tableW, 0], reach);
     w = mixc(w, [...mouth, 0], lift); w = mixc(w, [...viewW, 0], down); w = mixc(w, [...pocketW, 0], pk); w = mixc(w, [...chestW, 0], hold);
     w = mixc(w, [0.1, 0.6, 0], rel);
