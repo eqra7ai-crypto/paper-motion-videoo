@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>The Garden Behind the Glass</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style></head>
+<body><canvas id="c"></canvas><script src="scene.js"></script>
+<script>
+  // Interactive preview: open index.html?t=30 to see a still, or ?play to scrub in real time.
+  const q = new URLSearchParams(location.search);
+  if (!window.__RENDERER__) {
+    setup(Number(q.get('scale') || 0.5));
+    if (q.has('play')) { const t0 = performance.now(); (function loop(){ renderFrame(((performance.now()-t0)/1000) % DUR); requestAnimationFrame(loop); })(); }
+    else renderFrame(Number(q.get('t') || 0));
+  }
+</script></body></html>
