@@ -1,0 +1,30 @@
+{
+  "name": "paper-motion-videoo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eqra7ai-crypto/paper-motion-videoo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eqra7ai-crypto/paper-motion-videoo/issues"
+  },
+  "homepage": "https://github.com/eqra7ai-crypto/paper-motion-videoo#readme",
+  "type": "module",
+  "devDependencies": {
+    "@fontsource/alexandria": "^5.3.0",
+    "@fontsource/amiri": "^5.3.0",
+    "gsap": "^3.15.0",
+    "playwright": "^1.64.1"
+  }
+}
