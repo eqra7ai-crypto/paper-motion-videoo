@@ -265,56 +265,56 @@ function say(host,o){
 }
 
 /* ---------- الخط الزمني ---------- */
-const T={end:46};
+const T={end:69};
 // المشهد 1
-say('#cafeBubbles',{x:130,y:285,w:820,fs:50,tail:'tr',t0:.4,t1:5.2,hide:5.8,text:'تدري؟ أكثر أمنية أتمنى أحققها هي إني أزور بيت الله الحرام وأعتمر... وأخذ معي شخص غالي على قلبي'});
-say('#cafeBubbles',{x:100,y:340,w:800,fs:52,tail:'tl',t0:6.0,t1:9.4,hide:10.7,text:'وليش ما تستغل الفرصة؟ تعرف تطبيق نسك؟'});
-tl.fromTo('#cam',{scale:1},{scale:1.09,duration:11,ease:'none',immediateRender:false},0);
+say('#cafeBubbles',{x:130,y:285,w:820,fs:50,tail:'tr',t0:.4,t1:8.0,hide:8.9,text:'تدري؟ أكثر أمنية أتمنى أحققها هي إني أزور بيت الله الحرام وأعتمر... وأخذ معي شخص غالي على قلبي'});
+say('#cafeBubbles',{x:100,y:340,w:800,fs:52,tail:'tl',t0:9.1,t1:11.9,hide:13.2,text:'وليش ما تستغل الفرصة؟ تعرف تطبيق نسك؟'});
+tl.fromTo('#cam',{scale:1},{scale:1.09,duration:13.2,ease:'none',immediateRender:false},0);
 // المشهد 4 (العودة إلى المقهى)
-tl.fromTo('#cam',{scale:1.0},{scale:1.08,duration:8,ease:'none',immediateRender:false},30.6);
-tl.fromTo(['#aphone','#hand1','#hand2'],{autoAlpha:0,y:60},{autoAlpha:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},30.9);
-say('#cafeBubbles',{x:130,y:285,w:820,fs:54,tail:'tr',t0:31.4,t1:34.4,hide:34.9,text:'يعني ممكن أحقق أمنيتي وأعتمر مع شخص أحبه؟'});
-say('#cafeBubbles',{x:70,y:330,w:760,fs:52,tail:'tl',t0:35.0,t1:37.7,hide:37.9,text:'أكيد عندك فرصة، حمّل نسك واغتنمها الآن!'});
+tl.fromTo('#cam',{scale:1.0},{scale:1.08,duration:10.5,ease:'none',immediateRender:false},41.9);
+tl.fromTo(['#aphone','#hand1','#hand2'],{autoAlpha:0,y:60},{autoAlpha:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},42.3);
+say('#cafeBubbles',{x:130,y:285,w:820,fs:54,tail:'tr',t0:43.2,t1:46.4,hide:47.4,text:'يعني ممكن أحقق أمنيتي وأعتمر مع شخص أحبه؟'});
+say('#cafeBubbles',{x:70,y:330,w:760,fs:52,tail:'tl',t0:47.7,t1:51.2,hide:51.9,text:'أكيد عندك فرصة، حمّل نسك واغتنمها الآن!'});
 
 // المشهد 2
-tl.fromTo('#s2',{autoAlpha:0,clipPath:'circle(0% at 28% 82%)'},{autoAlpha:1,clipPath:'circle(150% at 28% 82%)',duration:1.1,ease:'power2.inOut',immediateRender:false},10.5);
-tl.fromTo('#s2phone',{y:900,rotation:-8},{y:0,rotation:0,duration:1,ease:'power3.out',immediateRender:false},11.2);
-tl.fromTo(['#fL','#fR'],{y:700},{y:0,duration:1,ease:'power3.out',immediateRender:false},11.2);
-tl.fromTo('.pattern',{rotation:0},{rotation:18,duration:10,ease:'none',immediateRender:false},10.5);
-say('#s2Bubbles',{x:70,y:270,w:940,fs:44,tail:'none',t0:12.0,t1:17.0,hide:17.3,text:'نسك مو بس يساعدك في رحلتك الإيمانية، تقدر تستفيد من خدماته مثل القرآن الكريم، والأذكار، وتحديد القبلة، والفنادق، وخدمات الحج والعمرة'});
-$$('#s2 .chip').forEach((c,i)=>tl.fromTo(c,{autoAlpha:0,scale:.4,y:30},{autoAlpha:1,scale:1,y:0,duration:.5,ease:'back.out(2)',immediateRender:false},13.6+i*.55));
-tl.to('#s2 .chip',{autoAlpha:0,scale:.9,duration:.3},17.0);
-say('#s2Bubbles',{x:70,y:300,w:940,fs:56,tail:'none',t0:17.4,t1:20.2,hide:20.4,text:'والأجمل إن عندك فرصة تدخل السحب وتفوز بعمرة لك ولشخص تحبه!'});
-tl.to('#s2phone',{scale:1.9,y:-120,duration:1,ease:'power3.in'},19.8);
-tl.fromTo('#flash',{autoAlpha:0},{autoAlpha:1,duration:.45,ease:'power2.in',immediateRender:false},20.35);
-tl.to('#flash',{autoAlpha:0,duration:.9,ease:'power2.out'},21.0);
+tl.fromTo('#s2',{autoAlpha:0,clipPath:'circle(0% at 28% 82%)'},{autoAlpha:1,clipPath:'circle(150% at 28% 82%)',duration:1.1,ease:'power2.inOut',immediateRender:false},12.8);
+tl.fromTo('#s2phone',{y:900,rotation:-8},{y:0,rotation:0,duration:1,ease:'power3.out',immediateRender:false},13.5);
+tl.fromTo(['#fL','#fR'],{y:700},{y:0,duration:1,ease:'power3.out',immediateRender:false},13.5);
+tl.fromTo('.pattern',{rotation:0},{rotation:30,duration:18,ease:'none',immediateRender:false},12.8);
+say('#s2Bubbles',{x:70,y:270,w:940,fs:44,tail:'none',t0:14.3,t1:24.2,hide:24.9,text:'نسك مو بس يساعدك في رحلتك الإيمانية، تقدر تستفيد من خدماته مثل القرآن الكريم، والأذكار، وتحديد القبلة، والفنادق، وخدمات الحج والعمرة'});
+$$('#s2 .chip').forEach((c,i)=>tl.fromTo(c,{autoAlpha:0,scale:.4,y:30},{autoAlpha:1,scale:1,y:0,duration:.5,ease:'back.out(2)',immediateRender:false},19.7+i*1.0));
+tl.to('#s2 .chip',{autoAlpha:0,scale:.9,duration:.3},24.9);
+say('#s2Bubbles',{x:70,y:300,w:940,fs:56,tail:'none',t0:25.3,t1:29.8,hide:30.1,text:'والأجمل إن عندك فرصة تدخل السحب وتفوز بعمرة لك ولشخص تحبه!'});
+tl.to('#s2phone',{scale:1.9,y:-120,duration:1,ease:'power3.in'},29.5);
+tl.fromTo('#flash',{autoAlpha:0},{autoAlpha:1,duration:.45,ease:'power2.in',immediateRender:false},30.05);
+tl.to('#flash',{autoAlpha:0,duration:.9,ease:'power2.out'},30.7);
 
 // المشهد 3
-tl.set('#s3',{autoAlpha:1},20.7);
-tl.set('#s2',{autoAlpha:0},20.7);
-tl.fromTo('#kaaba',{scale:1.18},{scale:1.0,duration:10,ease:'power1.out',immediateRender:false},20.7);
-tl.fromTo('#t3',{autoAlpha:0,y:50},{autoAlpha:1,y:0,duration:.9,ease:'power3.out',immediateRender:false},21.3);
-tl.fromTo('#pz1',{autoAlpha:0,y:120,scale:.8},{autoAlpha:1,y:0,scale:1,duration:.8,ease:'back.out(1.5)',immediateRender:false},24.4);
-tl.fromTo('#pz2',{autoAlpha:0,y:120,scale:.8},{autoAlpha:1,y:0,scale:1,duration:.8,ease:'back.out(1.5)',immediateRender:false},26.0);
-tl.to(['#pz1','#pz2'],{scale:1.04,duration:.5,yoyo:true,repeat:1,ease:'sine.inOut'},28.4);
-tl.to('#s3',{autoAlpha:0,duration:.8,ease:'power1.in'},30.3);
+tl.set('#s3',{autoAlpha:1},30.4);
+tl.set('#s2',{autoAlpha:0},30.4);
+tl.fromTo('#kaaba',{scale:1.18},{scale:1.0,duration:12,ease:'power1.out',immediateRender:false},30.4);
+tl.fromTo('#t3',{autoAlpha:0,y:50},{autoAlpha:1,y:0,duration:.9,ease:'power3.out',immediateRender:false},31.1);
+tl.fromTo('#pz1',{autoAlpha:0,y:120,scale:.8},{autoAlpha:1,y:0,scale:1,duration:.8,ease:'back.out(1.5)',immediateRender:false},36.3);
+tl.fromTo('#pz2',{autoAlpha:0,y:120,scale:.8},{autoAlpha:1,y:0,scale:1,duration:.8,ease:'back.out(1.5)',immediateRender:false},38.4);
+tl.to(['#pz1','#pz2'],{scale:1.04,duration:.5,yoyo:true,repeat:1,ease:'sine.inOut'},40.8);
+tl.to('#s3',{autoAlpha:0,duration:.8,ease:'power1.in'},41.9);
 
 // النهاية
-tl.fromTo('#curtain',{autoAlpha:1,clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0%)',duration:.6,ease:'power3.inOut',immediateRender:false},37.55);
-tl.set('#end',{autoAlpha:1},38.15);
-tl.set('#cafe',{autoAlpha:0},38.15);
-tl.to('#curtain',{clipPath:'inset(0 100% 0 0%)',duration:.6,ease:'power3.inOut'},38.2);
-tl.set('#curtain',{autoAlpha:0},38.85);
-tl.fromTo('#hl1',{autoAlpha:0,y:40},{autoAlpha:1,y:0,duration:.7,ease:'power3.out',immediateRender:false},38.5);
-tl.fromTo('#hl2',{autoAlpha:0,y:40},{autoAlpha:1,y:0,duration:.7,ease:'power3.out',immediateRender:false},39.2);
-tl.fromTo('#ul',{strokeDasharray:500,strokeDashoffset:500},{strokeDashoffset:0,duration:.8,ease:'power2.out',immediateRender:false},39.9);
-tl.fromTo('#pill',{autoAlpha:0,scale:.8},{autoAlpha:1,scale:1,duration:.6,ease:'back.out(1.6)',immediateRender:false},40.4);
-tl.fromTo(['#bgM','#bgK'],{autoAlpha:0,y:60},{autoAlpha:1,y:0,duration:.9,stagger:.15,ease:'power2.out',immediateRender:false},40.7);
-tl.fromTo('#endphone',{autoAlpha:0,y:120},{autoAlpha:1,y:0,duration:.9,ease:'power3.out',immediateRender:false},41.0);
-tl.fromTo('#par',{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.7,ease:'power2.out',immediateRender:false},41.8);
-tl.fromTo('#cta',{autoAlpha:0,scale:.85},{autoAlpha:1,scale:1,duration:.6,ease:'back.out(1.8)',immediateRender:false},42.5);
-tl.fromTo('#row',{autoAlpha:0,y:40},{autoAlpha:1,y:0,duration:.7,ease:'power2.out',immediateRender:false},43.1);
-tl.to('#cta',{scale:1.03,duration:.5,yoyo:true,repeat:3,ease:'sine.inOut'},43.8);
+tl.fromTo('#curtain',{autoAlpha:1,clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0%)',duration:.6,ease:'power3.inOut',immediateRender:false},51.95);
+tl.set('#end',{autoAlpha:1},52.55);
+tl.set('#cafe',{autoAlpha:0},52.55);
+tl.to('#curtain',{clipPath:'inset(0 100% 0 0%)',duration:.6,ease:'power3.inOut'},52.6);
+tl.set('#curtain',{autoAlpha:0},53.25);
+tl.fromTo('#hl1',{autoAlpha:0,y:40},{autoAlpha:1,y:0,duration:.7,ease:'power3.out',immediateRender:false},53.3);
+tl.fromTo('#hl2',{autoAlpha:0,y:40},{autoAlpha:1,y:0,duration:.7,ease:'power3.out',immediateRender:false},55.2);
+tl.fromTo('#ul',{strokeDasharray:500,strokeDashoffset:500},{strokeDashoffset:0,duration:.8,ease:'power2.out',immediateRender:false},55.9);
+tl.fromTo('#pill',{autoAlpha:0,scale:.8},{autoAlpha:1,scale:1,duration:.6,ease:'back.out(1.6)',immediateRender:false},57.4);
+tl.fromTo(['#bgM','#bgK'],{autoAlpha:0,y:60},{autoAlpha:1,y:0,duration:.9,stagger:.15,ease:'power2.out',immediateRender:false},57.8);
+tl.fromTo('#endphone',{autoAlpha:0,y:120},{autoAlpha:1,y:0,duration:.9,ease:'power3.out',immediateRender:false},58.2);
+tl.fromTo('#par',{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.7,ease:'power2.out',immediateRender:false},59.6);
+tl.fromTo('#cta',{autoAlpha:0,scale:.85},{autoAlpha:1,scale:1,duration:.6,ease:'back.out(1.8)',immediateRender:false},61.6);
+tl.fromTo('#row',{autoAlpha:0,y:40},{autoAlpha:1,y:0,duration:.7,ease:'power2.out',immediateRender:false},62.8);
+tl.to('#cta',{scale:1.03,duration:.5,yoyo:true,repeat:5,ease:'sine.inOut'},63.5);
 tl.to({}, {duration:.01}, T.end-.01);
 
 /* ---------- ما يعتمد على الزمن مباشرة ---------- */
@@ -326,13 +326,13 @@ function drawParts(t,alpha){
     ctx.globalAlpha=alpha*(.35+.4*Math.sin(t*2+p.a)**2);ctx.fillStyle='#ffe3a0';ctx.beginPath();ctx.arc(x,y,p.r,0,7);ctx.fill()}
   ctx.globalAlpha=1;
 }
-const SPEAK={A:[[.6,5.2],[31.5,34.4]],B:[[6.2,9.4],[35.1,37.7]]};
+const SPEAK={A:[[.6,8.3],[43.4,46.6]],B:[[9.3,12.05],[14.4,24.6],[25.4,30.1],[47.9,51.4]]};
 const speaking=(k,t)=>SPEAK[k].some(([a,b])=>t>=a&&t<=b);
 function face(id,k,t){
   const root=$(id), sp=speaking(k,t);
   let smile,lift,gx;
-  if(k==='A'){const hp=ease((t-30.8)/1.2);smile=.25+.75*hp+(sp?.1:0);lift=1-hp;gx=-3}
-  else{smile=.55+(sp?.15:0)+ease((t-31)/1.5)*.2;lift=0;gx=3}
+  if(k==='A'){const hp=ease((t-42.0)/1.2);smile=.25+.75*hp+(sp?.1:0);lift=1-hp;gx=-3}
+  else{smile=.55+(sp?.15:0)+ease((t-42.2)/1.5)*.2;lift=0;gx=3}
   const open=sp?Math.max(0,Math.sin(t*17+(k==='A'?0:1.3)))*.8+.15:0;
   const ph=(k==='A'?0:1.1), bl=(t+ph)%3.4, blink=bl<.13?Math.abs(bl-.065)/.065:1, by=Math.max(.08,blink);
   const eyeY=236;
@@ -340,8 +340,8 @@ function face(id,k,t){
   q('.eyeL').setAttribute('transform',`translate(168 228) scale(1 ${by})`);
   q('.eyeR').setAttribute('transform',`translate(232 228) scale(1 ${by})`);
   const g=gx*.8;['irL','irL2','irR','irR2'].forEach(c=>q('.'+c).setAttribute('cx',g));
-  const iy=k==='A'&&t<31?3.5:2;['irL','irL2','irR','irR2'].forEach(c=>q('.'+c).setAttribute('cy',iy));
-  const y0=196, il=6*lift+(k==='A'&&ease((t-30.8)/1.2)>0?-3*smile:0);
+  const iy=k==='A'&&t<42.2?3.5:2;['irL','irL2','irR','irR2'].forEach(c=>q('.'+c).setAttribute('cy',iy));
+  const y0=196, il=6*lift+(k==='A'&&ease((t-42.0)/1.2)>0?-3*smile:0);
   q('.bL').setAttribute('d',`M142 ${y0+7} Q164 ${y0-9-il*.2} 194 ${y0-il+2}`);
   q('.bR').setAttribute('d',`M258 ${y0+7} Q236 ${y0-9-il*.2} 206 ${y0-il+2}`);
   const my=317, sd=6+16*smile;
@@ -358,14 +358,14 @@ function frame(t){
   $$('.bokeh').forEach(b=>{if(b.dataset.p){b.style.transform=`translateY(${Math.sin(t*.4+ +b.dataset.p)*10}px)`}});
   $('#rays').style.transform=`rotate(${t*3}deg)`;
   $('#shine2').style.transform=`translateX(${((t*.4)%1.6-.8)*600}px)`;
-  const c1=ease((t-24.8)/1.6), c2=ease((t-26.4)/1.8);
+  const c1=ease((t-36.6)/1.6), c2=ease((t-38.6)/1.8);
   $('#n1').textContent=Math.round(100*c1);
   $('#n2').textContent=Math.round(10000*c2).toLocaleString('en-US');
   const pulse=u=>((u%1.6)/1.6)*3-1;
-  $('#sh1').style.transform=`translateX(${(((t-28)%2.4)/2.4)*900-450}px)`;
-  $('#sh2').style.transform=`translateX(${(((t-28.4)%2.4)/2.4)*900-450}px)`;
-  $('#ctash').style.transform=`translateX(${(((t-43)%1.8)/1.8)*1300-250}px)`;
-  const pa=(t>=20.9&&t<31?ease((t-20.9)/1.5):0)+(t>=38.6?ease((t-38.6)/1.5)*.7:0);
+  $('#sh1').style.transform=`translateX(${(((t-40.5)%2.4)/2.4)*900-450}px)`;
+  $('#sh2').style.transform=`translateX(${(((t-40.9)%2.4)/2.4)*900-450}px)`;
+  $('#ctash').style.transform=`translateX(${(((t-63.5)%1.8)/1.8)*1300-250}px)`;
+  const pa=(t>=31.4&&t<42.4?ease((t-31.4)/1.5):0)+(t>=53.4?ease((t-53.4)/1.5)*.7:0);
   drawParts(t,Math.min(pa,1)*.9);
 }
 window.__seek=t=>{tl.pause(t,false);frame(t)};
