@@ -1,3 +1,6 @@
 node_modules/
 out/frames/
 out/shots/
+out/voice/t*.wav
+out/voice/gap.wav
+out/voice/list.txt
