@@ -45,6 +45,17 @@ img{display:block}
 #aphone .scr{position:absolute;inset:14px;border-radius:32px;background:#fff;display:flex;align-items:center;justify-content:center}
 #aphone .scr img{width:150px}
 .hand{position:absolute;border-radius:60px;background:#d8a37a;box-shadow:inset -8px -10px 20px rgba(0,0,0,.18)}
+.pattern2{position:absolute;inset:-100px;opacity:.12;background:repeating-conic-gradient(from 0deg at 50% 62%,#f0d58c 0 3deg,transparent 3deg 12deg)}
+#s2b{background:radial-gradient(ellipse at 50% 60%,#13785d 0%,#0b4a3b 55%,#06271f 100%)}
+.sphone{position:absolute;left:350px;top:790px;width:380px;height:760px;border-radius:58px;padding:12px;background:linear-gradient(145deg,#f3dc9b,#b8892f 55%,#e8c97b);box-shadow:0 60px 140px rgba(0,0,0,.55),0 0 140px 16px rgba(240,213,140,.3)}
+.pscreen{position:relative;width:100%;height:100%;border-radius:46px;overflow:hidden;background:#fff}
+.pscreen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stepchip{position:absolute;left:50px;right:50px;top:668px;height:96px;border-radius:48px;background:rgba(255,253,248,.97);border:3px solid var(--gold);color:var(--green);font-weight:800;font-size:36px;display:flex;align-items:center;justify-content:center;gap:18px;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.stepchip b{display:inline-flex;width:54px;height:54px;border-radius:50%;background:var(--gold);color:#fff;align-items:center;justify-content:center;font-size:32px}
+#bgblur{position:absolute;inset:0;background:url(assets/cafe_bg.jpg) center/cover}
+#breath{position:absolute;inset:0}
+#plate{position:absolute;left:0;top:560px;width:1700px;height:1700px;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 15%);mask-image:linear-gradient(180deg,transparent 0,#000 15%);will-change:transform}
+.bubble.tv:after{left:var(--tx);right:auto}
 .vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,0) 45%,rgba(0,0,0,.6) 100%)}
 .warm{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,170,70,.14),rgba(10,70,55,.12));mix-blend-mode:soft-light}
 
@@ -118,26 +129,7 @@ img{display:block}
 
   <!-- المقهى -->
   <div id="cafe" class="layer">
-    <div id="cam">
-      <div class="window"><div id="winbk"></div></div>
-      <div class="shelf"></div><div class="plant"></div>
-      <div class="lamp" style="left:760px;height:210px"><i></i></div>
-      <div class="lamp" style="left:930px;height:130px"><i></i></div>
-      <div class="lamp" style="left:70px;height:90px"><i></i></div>
-      <div id="bokehs"></div>
-      <div class="person" id="pB"></div>
-      <div class="person" id="pA"></div>
-      <div class="table"></div>
-      <div class="saucer" style="left:150px"></div><div class="cup" style="left:185px"></div>
-      <div class="saucer" style="left:700px"></div><div class="cup" style="left:735px"></div>
-      <div class="steam" id="st1" style="left:240px;top:1240px"></div>
-      <div class="steam" id="st2" style="left:790px;top:1240px"></div>
-      <div id="aphone" class="h">
-        <div class="body"><div class="scr"><img src="assets/logo_up.png"></div></div>
-      </div>
-      <div class="hand h" id="hand1" style="left:622px;top:1470px;width:130px;height:150px;transform:rotate(-14deg)"></div>
-      <div class="hand h" id="hand2" style="left:830px;top:1460px;width:120px;height:150px;transform:rotate(10deg)"></div>
-    </div>
+    <div id="cam"><div id="bgblur"></div><div id="breath"><img id="plate" src="assets/cafe_plate.jpg"></div></div>
     <div class="warm"></div><div class="vignette"></div>
     <div id="cafeBubbles"></div>
   </div>
@@ -157,6 +149,21 @@ img{display:block}
     <div class="chip h" style="right:36px;top:1240px">خدمات الحج والعمرة</div>
     <div class="vignette"></div>
     <div id="s2Bubbles"></div>
+  </div>
+
+  <!-- مشهد الخطوات -->
+  <div id="s2b" class="layer h">
+    <div class="pattern2"></div>
+    <div class="stepchip h"><b>1</b><span>من الواجهة الرئيسية اختر «مركز الألعاب»</span></div>
+    <div class="stepchip h"><b>2</b><span>اختر «تحدي نُسُك»</span></div>
+    <div class="stepchip h"><b>3</b><span>اختر باباً من الأبواب الأربعة</span></div>
+    <div class="stepchip h"><b>4</b><span>أجب على السؤال بشكل صحيح</span></div>
+    <div class="stepchip h"><b>5</b><span>ستدخل السحب اليومي تلقائياً</span></div>
+    <div class="sphone h" id="sphone"><div class="pscreen">
+      <img class="h" src="assets/step1_up.png"><img class="h" src="assets/step2_up.png"><img class="h" src="assets/step3_up.png"><img class="h" src="assets/step4_up.png"><img class="h" src="assets/step5_up.png">
+    </div></div>
+    <div class="vignette"></div>
+    <div id="s2bBubbles"></div>
   </div>
 
   <!-- المشهد 3 -->
@@ -250,23 +257,13 @@ function personSVG(k){
     ${hair}</g>
   </svg>`;
 }
-$('#pA').innerHTML=personSVG('A'); $('#pB').innerHTML=personSVG('B');
-
-/* ---------- خلفية */
-(function(){
-  const r=rng(7), b=$('#bokehs'), cols=['#ffc977','#ffb25a','#ffe2a8','#ff9e4a'];
-  for(let i=0;i<26;i++){const d=document.createElement('div');d.className='bokeh';const s=40+r()*110;
-    d.style.cssText=`left:${r()*1000}px;top:${130+r()*560}px;width:${s}px;height:${s}px;background:${cols[i%4]};opacity:${.18+r()*.4}`;d.dataset.x=d.style.left;d.dataset.p=r()*6;b.appendChild(d)}
-  const w=$('#winbk');for(let i=0;i<14;i++){const d=document.createElement('div');d.className='bokeh';const s=50+r()*120;
-    d.style.cssText=`left:${r()*500}px;top:${200+r()*420}px;width:${s}px;height:${s}px;background:${cols[i%4]};opacity:${.35+r()*.4};filter:blur(14px)`;w.appendChild(d)}
-})();
 
 /* ---------- الفقاعات والخط الزمني (من توقيت الكلمات الفعلي) */
 const S=TL.s,E=TL.e,W=TL.w,SC=TL.screen,T={end:TL.T};
 const wt=(n,i)=>W[n][i][0];
 function bubble(host,o){
   const d=document.createElement('div');d.className='bubble h '+(o.tail||'none');
-  d.style.cssText=`left:${o.x}px;top:${o.y}px;width:${o.w}px;font-size:${o.fs||50}px`;
+  d.style.cssText=`left:${o.x}px;top:${o.y}px;width:${o.w}px;font-size:${o.fs||50}px;--tx:${o.tx||150}px`;
   d.innerHTML=SC[o.n].map(w=>`<span class="w">${w}</span>`).join(' ');
   $(host).appendChild(d);return d;
 }
@@ -277,17 +274,20 @@ function say(host,o){
   ws.forEach((w,i)=>tl.fromTo(w,{opacity:0,y:14},{opacity:1,y:0,duration:.22,ease:'power2.out',immediateRender:false},Math.max(t0+.2,wt(o.n,i)-.04)));
   tl.to(d,{autoAlpha:0,scale:.95,duration:.3,ease:'power1.in'},E[o.n]+(o.after??.7));
 }
-const R2=E[2]+.7, Z=E[4]-.55, S3=E[4]+.25, B4=E[6]+.85, CU=E[8]+.55;
+const R2=E[2]+.7, S3=E[13]+.85, B4=E[6]+.85, CU=E[8]+.55;
 window.HAPPY=B4;
 // المشهد 1
-say('#cafeBubbles',{n:1,x:130,y:285,w:820,fs:50,tail:'tr'});
-say('#cafeBubbles',{n:2,x:100,y:340,w:800,fs:52,tail:'tl',after:.9});
-tl.fromTo('#cam',{scale:1},{scale:1.09,duration:R2+.3,ease:'none',immediateRender:false},0);
+const PAN=-620;
+say('#cafeBubbles',{n:1,x:100,y:250,w:860,fs:50,tail:'tv',tx:300,t:0});
+say('#cafeBubbles',{n:2,x:100,y:300,w:860,fs:52,tail:'tv',tx:600,after:.9});
+tl.fromTo('#cam',{scale:1},{scale:1.07,duration:R2+.3,ease:'none',immediateRender:false},0);
+tl.fromTo('#plate',{x:0},{x:PAN,duration:.9,ease:'power2.inOut',immediateRender:false},E[1]+.05);
 // المشهد 4 (العودة إلى المقهى)
-tl.fromTo('#cam',{scale:1.0},{scale:1.08,duration:TL.T-B4+.1,ease:'none',immediateRender:false},B4-.1);
-tl.fromTo(['#aphone','#hand1','#hand2'],{autoAlpha:0,y:60},{autoAlpha:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},B4+.4);
-say('#cafeBubbles',{n:7,x:130,y:285,w:820,fs:54,tail:'tr',after:.45});
-say('#cafeBubbles',{n:8,x:70,y:330,w:760,fs:52,tail:'tl',after:.6});
+tl.set('#plate',{x:0},R2+1.6);
+tl.fromTo('#cam',{scale:1.0},{scale:1.07,duration:TL.T-B4+.1,ease:'none',immediateRender:false},B4-.1);
+tl.fromTo('#plate',{x:0},{x:PAN,duration:.9,ease:'power2.inOut',immediateRender:false},E[7]+.05);
+say('#cafeBubbles',{n:7,x:100,y:250,w:860,fs:54,tail:'tv',tx:300,after:.45});
+say('#cafeBubbles',{n:8,x:100,y:300,w:860,fs:52,tail:'tv',tx:600,after:.6});
 
 // المشهد 2
 tl.fromTo('#s2',{autoAlpha:0,clipPath:'circle(0% at 28% 82%)'},{autoAlpha:1,clipPath:'circle(150% at 28% 82%)',duration:1.1,ease:'power2.inOut',immediateRender:false},R2);
@@ -299,9 +299,28 @@ say('#s2Bubbles',{n:3,x:70,y:270,w:940,fs:44,tail:'none',after:.6});
 [12,14,15,17,18].forEach((wi,i)=>tl.fromTo($$('#s2 .chip')[i],{autoAlpha:0,scale:.4,y:30},{autoAlpha:1,scale:1,y:0,duration:.5,ease:'back.out(2)',immediateRender:false},wt(3,wi)-.1));
 tl.to('#s2 .chip',{autoAlpha:0,scale:.9,duration:.3},E[3]+.6);
 say('#s2Bubbles',{n:4,x:70,y:300,w:940,fs:56,tail:'none',after:.4});
-tl.to('#s2phone',{scale:1.9,y:-120,duration:1,ease:'power3.in'},Z);
-tl.fromTo('#flash',{autoAlpha:0},{autoAlpha:1,duration:.45,ease:'power2.in',immediateRender:false},Z+.55);
-tl.to('#flash',{autoAlpha:0,duration:.9,ease:'power2.out'},Z+1.2);
+// عودة إلى المقهى: الشخص الأول يسأل عن السحب
+tl.to('#s2',{autoAlpha:0,duration:.5,ease:'power1.in'},E[4]+.45);
+say('#cafeBubbles',{n:10,x:100,y:250,w:760,fs:54,tail:'tv',tx:300,after:.5});
+// مشهد الخطوات بلقطات التطبيق
+const R3=E[10]+.6;
+tl.fromTo('#s2b',{autoAlpha:0,clipPath:'circle(0% at 50% 62%)'},{autoAlpha:1,clipPath:'circle(150% at 50% 62%)',duration:1.0,ease:'power2.inOut',immediateRender:false},R3);
+tl.fromTo('#sphone',{autoAlpha:0,y:700,scale:.9},{autoAlpha:1,y:0,scale:1,duration:.9,ease:'power3.out',immediateRender:false},R3+.5);
+tl.fromTo('.pattern2',{rotation:0},{rotation:30,duration:E[12]-R3+1,ease:'none',immediateRender:false},R3);
+say('#s2bBubbles',{n:11,x:70,y:250,w:940,fs:44,tail:'none',after:.2});
+say('#s2bBubbles',{n:12,x:70,y:290,w:940,fs:52,tail:'none',after:.3});
+const STEPS=[[11,2],[11,7],[11,11],[12,0],[12,5]], chips=$$('#s2b .stepchip'), shots=$$('#s2b .pscreen img');
+STEPS.forEach(([n,wi],i)=>{
+  const t=wt(n,wi)-.1, tn=i<4?wt(STEPS[i+1][0],STEPS[i+1][1])-.1:null;
+  tl.fromTo(chips[i],{autoAlpha:0,y:24},{autoAlpha:1,y:0,duration:.4,ease:'back.out(1.6)',immediateRender:false},t);
+  tl.fromTo(shots[i],{autoAlpha:0,x:60},{autoAlpha:1,x:0,duration:.45,ease:'power2.out',immediateRender:false},t);
+  if(tn!==null){tl.to(chips[i],{autoAlpha:0,duration:.2},tn);tl.to(shots[i],{autoAlpha:0,x:-60,duration:.3},tn)}
+});
+tl.to('#s2b',{autoAlpha:0,duration:.5,ease:'power1.in'},E[12]+.5);
+// عودة للمقهى: ردّ فعل الشخص الأول ثم انتقال إلى الكعبة
+say('#cafeBubbles',{n:13,x:100,y:250,w:760,fs:54,tail:'tv',tx:300,after:.4});
+tl.fromTo('#flash',{autoAlpha:0},{autoAlpha:1,duration:.45,ease:'power2.in',immediateRender:false},E[13]+.4);
+tl.to('#flash',{autoAlpha:0,duration:.9,ease:'power2.out'},E[13]+1.1);
 
 // المشهد 3
 tl.set('#s3',{autoAlpha:1},S3);
@@ -363,11 +382,7 @@ function face(id,k,t){
   const te=q('.teeth'),tw=30+smile*10;te.setAttribute('opacity',(smile>.5||open>.3)?1:0);te.setAttribute('y',my-3-smile*3);te.setAttribute('width',tw);te.setAttribute('x',241-tw/2);
 }
 function frame(t){
-  face('#pA','A',t);face('#pB','B',t);
-  const bob=Math.sin(t*1.3);
-  $('#pA').style.transform=`translateY(${bob*3}px) rotate(3deg) scaleX(-1)`;$('#pB').style.transform=`translateY(${Math.sin(t*1.1+1)*3}px) rotate(-3deg)`;
-  [['#st1',0],['#st2',2]].forEach(([s,p])=>{const e=$(s);const u=((t*.5+p*.17)%1);e.style.opacity=.9*Math.sin(u*Math.PI);e.style.transform=`translate(${Math.sin(t*2+p)*10}px,${-u*60}px) scaleY(${.8+u*.5})`});
-  $$('.bokeh').forEach(b=>{if(b.dataset.p){b.style.transform=`translateY(${Math.sin(t*.4+ +b.dataset.p)*10}px)`}});
+  $('#breath').style.transform=`translateY(${Math.sin(t*1.4)*4}px) scale(${1+Math.sin(t*1.4)*.003})`;
   $('#rays').style.transform=`rotate(${t*3}deg)`;
   $('#shine2').style.transform=`translateX(${((t*.4)%1.6-.8)*600}px)`;
   const c1=ease((t-wt(6,0)-.1)/1.6), c2=ease((t-wt(6,3)-.1)/1.8);
