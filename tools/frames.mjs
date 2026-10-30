@@ -5,7 +5,7 @@ import fs from 'fs';
 const [shard, shards] = [Number(process.argv[2]), Number(process.argv[3])];
 const FPS = 30;
 fs.mkdirSync('out/frames', { recursive: true });
-const b = await chromium.launch({ executablePath: process.env.CHROME_BIN, args: ['--no-sandbox', '--allow-file-access-from-files'] });
+const b = await chromium.launch({ executablePath: process.env.CHROME_BIN, args: ['--no-sandbox','--allow-file-access-from-files','--use-angle=swiftshader','--enable-unsafe-swiftshader','--ignore-gpu-blocklist'] });
 const p = await b.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 2 });
 p.on('pageerror', e => console.error('PAGEERR', e.message));
 await p.goto(pathToFileURL(path.resolve('index.html')).href);
